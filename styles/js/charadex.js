@@ -80,7 +80,7 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     if (!profileArr) return false;
 
     if (config.prevNext?.toggle ?? false) {
-      charadex.listFeatures.prevNextLink(pageUrl, charadexData, profileArr, selector);
+      charadex.listFeatures.prevNextLink(pageUrl, charadexData, profileArr, config.prevNext?.text ?? "profileid" ,selector);
     }
     
     /* Create Profile */

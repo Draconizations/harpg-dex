@@ -340,17 +340,17 @@ charadex.listFeatures.search = (searchParameters, searchFilterToggle = true, sel
 /* ==================================================================== */
 /* Prev Next Link
 ======================================================================= */
-charadex.listFeatures.prevNextLink = function (pageUrl, galleryArray, profileArray, selector = 'charadex') {
+charadex.listFeatures.prevNextLink = function (pageUrl, galleryArray, profileArray, profiletext, selector = 'charadex') {
 
   // Checks
   if (!charadex.tools.checkArray(galleryArray) || !charadex.tools.checkArray(profileArray) || !pageUrl) return false;
 
   // Will help us create links
-  const updateLink = (selector, profile) => {
+  const updateLink = (selector, profile, profiletext) => {
     const element = $(selector);
     if (profile) {
       element.attr('href', charadex.url.addUrlParameters(pageUrl, { profile: profile.profileid }));
-      element.find('span').text(profile.profileid);
+      element.find('span').text(profile[profiletext]);
       element.show();
     } else {
       element.hide();
@@ -362,8 +362,8 @@ charadex.listFeatures.prevNextLink = function (pageUrl, galleryArray, profileArr
   if (currentIndex === -1) return false;
 
   // Add links based on links
-  updateLink('#entryPrev', galleryArray[currentIndex - 1] || null);
-  updateLink('#entryNext', galleryArray[currentIndex + 1] || null);
+  updateLink('#entryPrev', galleryArray[currentIndex - 1] || null, profiletext);
+  updateLink('#entryNext', galleryArray[currentIndex + 1] || null, profiletext);
 
   // Show the prevnext buttons
   $(`#${selector}-prevnext-container`).show();

@@ -178,14 +178,15 @@
 
     <!-- Gallery Items
     <!-- --------------------------------------------------------------- -->
-    <div class="col-lg-3 col-sm-6 p-2" id="charadex-gallery-item">
+    <div class="col-md-6 p-2" id="charadex-gallery-item">
       <div class="card h-100">
 
         <!-- Header -->
         <div class="card-header text-center">
           <h5 class="mb-0">
-            <a class="profileid profilelink" href=""></a>
+            <a class="callname profilelink" href=""></a>
           </h5>
+          <span class="text-muted"><span class="showname"></</span>
         </div>
 
         <!-- Image-->
@@ -193,9 +194,11 @@
           <img class="image img-fluid m-auto" src="" >
         </div>
 
-        <!-- Owner -->
+        <!-- Height + Gender -->
         <div class="card-footer text-center">
-          <a class="owner ownerlink small" href=""></a>
+          <span class="small">
+            <span class=""></span> <span class="gender"></span>
+          </span>
         </div>
 
       </div>
@@ -284,23 +287,17 @@
 
               <div class="col-md-6 p-2">
                 <div class="card bg-faded p-4 h-100">
-
-                  <!-- Item -->
-                  <div class="d-flex no-gutters mb-2">
-                    <b class="text-muted col-md-5 col-6">Owner</b>
-                    <a class="owner ownerlink"></a>
-                  </div>
-    
-                  <!-- Item -->
-                  <div class="d-flex no-gutters mb-2">
-                    <b class="text-muted col-md-5 col-6">Artist</b>
-                    <a class="artist artistlink"></a>
-                  </div>
     
                   <!-- Item -->
                   <div class="d-flex no-gutters mb-2">
                     <b class="text-muted col-md-5 col-6">Designer</b>
                     <a class="designer designerlink"></a>
+                  </div>
+
+                  <!-- Item -->
+                  <div class="d-flex no-gutters mb-2">
+                    <b class="text-muted col-md-5 col-6">Artist</b>
+                    <a class="artist artistlink"></a>
                   </div>
 
                   <hr>
@@ -336,7 +333,7 @@
           <!-- ----------------------------------------------------------- -->
           <div class="tab-pane fade" id="lineage" role="tabpanel" aria-labelledby="lineage-tab" tabindex="0">
             <h4 class="text-primary text-center mb-3">Lineage</h4>
-            <div id="lineaged-gallery">
+            <div id="lineaged-gallery" class="text-center">
 
               <div class="lineaged-list"></div>
 

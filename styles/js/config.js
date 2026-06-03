@@ -34,11 +34,9 @@ charadex.sheet = {
     gallery:    "gallery",
   },
 
-  owner: "Fulmn",
-
   options: {
     designTypes: ['Import', 'Lineaged'],
-    statuses: ['Resell', 'Trade', 'Gift', 'Voided', 'For Sale', 'Purchased'],
+    statuses: ['Resell', 'Trade', 'Gift', 'For Sale', 'Purchased', 'Adopted', 'Designed'],
     genders: ["Stallion", "Mare", "Gelding", "Mare (infertile)"],
     breeds: ["Loshenka"],
   }
@@ -96,6 +94,7 @@ charadex.page.masterlist = {
 
   prevNext: {
     toggle: true,
+    text: 'callname',
   },
 
   relatedData: {

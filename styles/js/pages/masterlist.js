@@ -23,15 +23,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             listData.profileArray[0].lineage,
             charadex.page.masterlist.relatedData['lineage']
           );
-        }
 
         let check = ["sirename", "ssname", "sdname", "ddname", "sssname", "ssdname", "sdsname", "sddname", "dsname", "dssname", "dsdname", "dddname"];
         
-        for (const ancestor of check) {
-          let el = $(`.${ancestor}`);
-          if (!el.text()) el.remove();
+          for (const ancestor of check) {
+            let el = $(`.${ancestor}`);
+            if (!el.text()) el.remove();
+          }
+        } else {
+          $(".lineaged-list").text("No lineage found.")
         }
-
       }
 
     }
