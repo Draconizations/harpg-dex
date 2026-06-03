@@ -73,7 +73,7 @@
 
         <!-- Title
         <!-- --------------------------------------------------------------- -->
-        <h3 class="mb-0"><a href="masterlist.html">Species Masterlist</a></h3>
+        <h3 class="mb-0"><a href="masterlist.html">Horse Masterlist</a></h3>
 
         <!-- Faux Folders
         <!-- --------------------------------------------------------------- -->
@@ -209,8 +209,8 @@
 
         <!-- Header -->
         <div class="card-header p-4 text-center">
-          <h3 class="mb-0 pr-2"><a class="profilelink profileid"></a></h3> 
-          <div class="text-muted">(#<span class="id"></span>)</div>
+          <h3 class="mb-0 pr-2"><span class="callname"></span></h3> 
+          <div class="text-muted"><span class="showname"></span></div>
         </div>
 
         <!-- Image -->
@@ -228,8 +228,8 @@
             aria-controls="profile" aria-selected="true">Profile</a>
           </li>
           <li class="col p-1 nav-item" role="presentation">
-            <a class="w-100 btn btn-primary" id="logs-tab" data-toggle="tab" href="#logs" aria-controls="logs" 
-            aria-selected="false">Logs</a>
+            <a class="w-100 btn btn-primary" id="lineage-tab" data-toggle="tab" href="#lineage" aria-controls="lineage" 
+            aria-selected="false">Lineage</a>
           </li>
         </ul>
         <hr class="my-0">
@@ -250,14 +250,14 @@
 
                   <!-- Item -->
                   <div class="d-flex no-gutters mb-2">
-                    <b class="text-muted col-md-5 col-6">Species</b>
-                    <span class="species"></span>
+                    <b class="text-muted col-md-5 col-6">Breed</b>
+                    <span class="breed"></span>
                   </div>
     
                   <!-- Item -->
                   <div class="d-flex no-gutters mb-2">
-                    <b class="text-muted col-md-5 col-6">Rarity</b>
-                    <span class="rarity"></span>
+                    <b class="text-muted col-md-5 col-6">Gender</b>
+                    <span class="gender"></span>
                   </div>
     
                   <!-- Item -->
@@ -269,9 +269,14 @@
                   <hr>
 
                   <!-- Item -->
+                  <div class="mb-2">
+                    <b class="text-muted">Genotype</b>
+                    <div class="px-4 cd-text-pre genotype cd-genotype-scroll"></div>
+                  </div>
+
                   <div>
-                    <b class="text-muted">Traits</b>
-                    <div class="px-4 cd-text-pre traits cd-traits-scroll"></div>
+                    <b class="text-muted">Phenotype</b>
+                    <div class="px-4 cd-text-pre phenotype cd-phenotype-scroll"></div>
                   </div>
 
                 </div>
@@ -302,8 +307,8 @@
     
                   <!-- Item -->
                   <div class="d-flex no-gutters mb-2">
-                    <b class="text-muted col-md-5 col-6">Value</b>
-                    <span>$<span class="value"></span></span>
+                    <b class="text-muted col-md-5 col-6">Experience</b>
+                    <span><span class="experience"></span> xp</span>
                   </div>
     
                   <!-- Item -->
@@ -327,47 +332,167 @@
           </div>
           
           
-          <!-- Logs
+          <!-- lineage
           <!-- ----------------------------------------------------------- -->
-          <div class="tab-pane fade" id="logs" role="tabpanel" aria-labelledby="logs-tab" tabindex="0">
-            <h4 class="text-primary">Transaction Log</h4>
-            <div class="card bg-faded p-4" id="log-gallery">
+          <div class="tab-pane fade" id="lineage" role="tabpanel" aria-labelledby="lineage-tab" tabindex="0">
+            <h4 class="text-primary text-center mb-3">Lineage</h4>
+            <div id="lineaged-gallery">
 
-              <!-- List -->
-              <!-- --------------------------------------------------------------- -->
-              <div class="row no-gutters">
-                <div class="col-md-3"><b>Timestamp</b></div>
-                <div class="col-md-9"><b>Reason</b></div>
-              </div>
-              <hr>
-              <div class="log-list"></div>
+              <div class="lineaged-list"></div>
 
               <!-- List Item -->
               <!-- --------------------------------------------------------------- -->
               <div style="display: none;">
-                <div class="row no-gutters" id="log-gallery-item">
-                  <div class="col-md-3"><span class="timestamp"></span></div>
-                  <div class="col-md-9"><span class="reason"></span></div>
+                <div class="row no-gutters" id="lineaged-gallery-item">
+                  <div class="col-12 pb-3">
+
+                    <div class="card bg-faded text-center mb-2">
+                      <div class="card-header">Sire</div>
+                      <a class="card-body sirename sirelink"></a>
+                    </div>
+
+                    <div class="row no-gutters">
+                      <div class="col-md-6 pr-md-1">
+
+                        <div class="card bg-faded text-center mb-2">
+                          <div class="card-header">SS</div>
+                          <a class="card-body ssname sslink"></a>
+                        </div>
+
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">SSS</div>
+                              <a class="card-body sssname ssslink"></a>
+                            </div>
+                          
+                          </div>
+
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">SSD</div>
+                              <a class="card-body ssdname ssdlink"></a>
+                            </div>
+                          
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 pl-md-1">
+
+                        <div class="card bg-faded text-center mb-2">
+                          <div class="card-header">SD</div>
+                          <a class="card-body sdname sdlink"></a>
+                        </div>
+
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">SDS</div>
+                              <a class="card-body sdsname sdslink"></a>
+                            </div>
+                          
+                          </div>
+
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">SDD</div>
+                              <a class="card-body sddname sddlink"></a>
+                            </div>
+                          
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 pt-3">
+
+                    <div class="card bg-faded text-center mb-2">
+                      <div class="card-header">Dam</div>
+                      <a class="card-body damname damlink"></a>
+                    </div>
+                    
+                    <div class="row no-gutters">
+                      <div class="col-md-6 pr-md-1">
+
+                        <div class="card bg-faded text-center mb-2">
+                          <div class="card-header">DS</div>
+                          <a class="card-body dsname dslink"></a>
+                        </div>
+
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">DSS</div>
+                              <a class="card-body dssname dsslink"></a>
+                            </div>
+                          
+                          </div>
+
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">DSD</div>
+                              <a class="card-body dsdname dsdlink"></a>
+                            </div>
+                          
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 pl-md-1">
+
+                        <div class="card bg-faded text-center mb-2">
+                          <div class="card-header">DD</div>
+                          <a class="card-body ddname ddlink"></a>
+                        </div>
+
+                        <div class="row no-gutters">
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">DDS</div>
+                              <a class="card-body dssname dsslink"></a>
+                            </div>
+                          
+                          </div>
+
+                          <div class="col-lg-6 pr-lg-1">
+                          
+                            <div class="card bg-faded text-center mb-2">
+                              <div class="card-header">DDD</div>
+                              <a class="card-body dsdname dsdlink"></a>
+                            </div>
+                          
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
 
               <!-- Pagination
               <!-- --------------------------------------------------------------- -->
-              <div style="display: none;" class="log-pagination-container">
+              <div style="display: none;" class="lineaged-pagination-container">
                 <hr>
                 <div class="nav d-flex justify-content-center mb-n4">
                   <div class="btn-prev page-item"><a class="page-link"><i class="fa fa-chevron-left"></i></a></div>
-                  <ul class="pagination log-pagination log-pagination-top justify-content-center m-0"></ul>
+                  <ul class="pagination lineaged-pagination lineaged-pagination-top justify-content-center m-0"></ul>
                   <div class="btn-next page-item"><a class="page-link"><i class="fa fa-chevron-right"></i></a></div>
                 </div>
               </div>
 
             </div>
-          </div>
-
-          <!-- Where to Update -->
-          <div class="card bg-faded py-2 px-3 mt-3 small text-center">
-            <b>If you need to update this entry, please do so <a href="">here</a>.</b>
           </div>
 
         </div>
