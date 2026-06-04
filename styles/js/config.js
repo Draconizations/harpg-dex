@@ -175,7 +175,7 @@ charadex.page.gallery = {
   },
 
   filters: {
-    toggle: true,
+    toggle: false,
     parameters: {
       'Design Type': charadex.sheet.options.designTypes,
       'Status': charadex.sheet.options.statuses,
@@ -192,7 +192,7 @@ charadex.page.gallery = {
   search: {
     toggle: true,
     filterToggle: true,
-    parameters: ['All', 'Title', 'Artist']
+    parameters: ['All', 'Title', 'Artist', 'Timestamp']
   },
 
   prevNext: {
@@ -208,8 +208,9 @@ charadex.page.gallery = {
       primaryProperty: 'horse',
       relatedProperty: 'id',
       dexSelector: 'designs',
-      profileProperty: 'id',
-      profileToggle: true,
+      profileProperty: 'design',
+      profileToggle: false,
+      sitePage: 'masterlist',
 
       sort: {
         toggle: true,
@@ -219,7 +220,7 @@ charadex.page.gallery = {
       },
 
       pagination: {
-        toggle: true,
+        toggle: false,
         bottomToggle: true,
         amount: 6,
       },

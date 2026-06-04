@@ -299,7 +299,10 @@ charadex.manageData = {
       for (let secondaryEntry of secondaryArray) {
         let secondaryDataArray = secondaryEntry[secondaryKey].split(',');
         for (let prop of secondaryDataArray) {
-          if (scrub(primaryEntry[primaryKey]) === scrub(prop)) {
+          const secondaryIDs = new Set(prop.split(','));
+          const primaryIDs = primaryEntry[primaryKey].split(',');
+
+          if (primaryIDs.some(i => secondaryIDs.has(i))) {
             primaryEntry[scrub(secondaryPageName)].push(secondaryEntry);
           }
         }
