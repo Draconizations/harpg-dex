@@ -132,6 +132,7 @@ charadex.page.masterlist = {
       dexSelector: 'gallery',
       profileProperty: 'id',
       profileToggle: true,
+      sitePage: 'gallery',
 
       sort: {
         toggle: true,

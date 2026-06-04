@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (listData.type == 'profile') {
 
-        // Create the log dex
+        // Create the lineage tab
         if (charadex.tools.checkArray(listData.profileArray[0].lineage)) {
           let lineage = await charadex.initialize.page(
             listData.profileArray[0].lineage,
@@ -32,6 +32,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           }
         } else {
           $(".lineaged-list").text("No lineage found.")
+        }
+
+        if (charadex.tools.checkArray(listData.profileArray[0].gallery)) {
+          let gallery = await charadex.initialize.page(
+            listData.profileArray[0].gallery,
+            charadex.page.masterlist.relatedData['gallery']
+          );
+        } else {
+          $(".gallert-list").text("No gallery items found.")
         }
       }
 
