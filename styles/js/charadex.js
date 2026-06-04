@@ -43,9 +43,9 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
   if (config.relatedData) {
     for (let page in config.relatedData) {
       await charadex.manageData.relateData(
-        charadexData, 
-        config.relatedData[page].primaryProperty, 
-        page, 
+        charadexData,
+        config.relatedData[page].primaryProperty,
+        page,
         config.relatedData[page].relatedProperty
       );
     }
@@ -62,8 +62,8 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
   /* Sort the Dex */
   if (config.sort?.toggle ?? false) {
     charadexData = charadex.manageData.sortArray(
-      charadexData, 
-      config.sort.sortProperty, 
+      charadexData,
+      config.sort.sortProperty,
       config.sort.order,
       config.sort.parametersKey,
       config.sort.parameters,
@@ -80,9 +80,9 @@ charadex.initialize.page = async (dataArr, config, dataCallback, listCallback, c
     if (!profileArr) return false;
 
     if (config.prevNext?.toggle ?? false) {
-      charadex.listFeatures.prevNextLink(pageUrl, charadexData, profileArr, config.prevNext?.text ?? "profileid" ,selector);
+      charadex.listFeatures.prevNextLink(pageUrl, charadexData, profileArr, config.prevNext?.text ?? "profileid", selector);
     }
-    
+
     /* Create Profile */
     let profileList = list.initializeProfile(profileArr);
 
@@ -154,7 +154,7 @@ charadex.initialize.groupGallery = async function (config, dataArray, groupBy, c
 
   /* Check the Configs */
   if (!config) return console.error(`No config added.`);
-  
+
   /* Get some stuff we'll need */
   let selector = config.dexSelector;
   const pageUrl = customPageUrl || charadex.url.getPageUrl(config.sitePage);
@@ -174,8 +174,8 @@ charadex.initialize.groupGallery = async function (config, dataArray, groupBy, c
   /* Sort the Dex */
   if (config.sort?.toggle ?? false) {
     charadexData = charadex.manageData.sortArray(
-      charadexData, 
-      config.sort.sortProperty, 
+      charadexData,
+      config.sort.sortProperty,
       config.sort.order,
       config.sort.parametersKey,
       config.sort.parameters,
@@ -195,21 +195,21 @@ charadex.initialize.groupGallery = async function (config, dataArray, groupBy, c
     let groupArray = Object.groupBy(charadexData, obj => obj[groupBy]);
 
     // Create base selectors
-    let itemSelector =  { item: `${selector}-gallery-item` };
-    let containerSelector =  `${selector}-gallery`;
+    let itemSelector = { item: `${selector}-gallery-item` };
+    let containerSelector = `${selector}-gallery`;
 
     for (let group in groupArray) {
 
       //Create the list selector
       let groupListSelector = charadex.tools.scrub(group);
-      
+
       // Create the DOM elements
       let groupElement = $(`#${selector}-group-list`).clone();
       groupElement.removeAttr('id');
       groupElement.find(`.${selector}-list`).addClass(`${groupListSelector}-list`);
       groupElement.find(`.${selector}-group-title`).text(group);
       $(`#${selector}-group`).append(groupElement);
-      
+
       // Build list based on group
       let groupListManager = charadex.buildList(groupListSelector);
       let groupList = groupListManager.initializeGallery(groupArray[group], itemSelector, containerSelector);

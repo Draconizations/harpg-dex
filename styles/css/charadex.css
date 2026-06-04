@@ -788,7 +788,9 @@ p:last-child {
 }
 
 
-/* HARPG TWEAKS */
+/* ============================================================= */
+/* HARPG TWEAKS
+/* ============================================================= */
 
 .card-header:last-child {
   border-radius: inherit !important;

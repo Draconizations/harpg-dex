@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let dex = await charadex.initialize.page(
     null,
     charadex.page.gallery,
-    null, 
+    null,
     async (listData) => {
 
       if (listData.type == 'profile') {
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           let masterlist = await charadex.initialize.page(
             listData.profileArray[0].masterlist,
             charadex.page.gallery.relatedData['masterlist'],
-            () => {},
+            () => { },
             (data) => {
               // add background images to characters
-              $('.cd-design-background').each(function(i) {
-                  const element = $(this);
-                  const image = data.array[i]?.image;
-                  element.attr('style', `background-image: url(${image})`);
+              $('.cd-design-background').each(function (i) {
+                const element = $(this);
+                const image = data.array[i]?.image;
+                element.attr('style', `background-image: url(${image})`);
               });
             }
           );
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
   );
-  
+
   charadex.tools.loadPage('.softload', 500);
-  
+
 });

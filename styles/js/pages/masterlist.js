@@ -10,7 +10,7 @@ function getRankData(xp) {
   let current = [0, 'Unranked'];
   let next = ranks[0];
 
-  for (let i = 0; i < ranks.length; i++ ) {
+  for (let i = 0; i < ranks.length; i++) {
     if (xp >= ranks[i][0]) {
       current = ranks[i];
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let dex = await charadex.initialize.page(
     null,
     charadex.page.masterlist,
-    null, 
+    null,
     async (listData) => {
 
       if (listData.type == 'profile') {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           // display progress from current rank to the next
           if (current[0] !== next[0]) {
-            $('.xp-progress-bar').css('width', ((experience - current[0]) / (next[0] - current[0])  * 100) + '%');
+            $('.xp-progress-bar').css('width', ((experience - current[0]) / (next[0] - current[0]) * 100) + '%');
             $('.cd-next-rank').text(`Next rank: ${next[1]}`);
           } else {
             $('.xp-progress-bar').css('width', '100%');
@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             charadex.page.masterlist.relatedData['lineage']
           );
 
-        let check = ["sirename", "ssname", "sdname", "ddname", "sssname", "ssdname", "sdsname", "sddname", "dsname", "dssname", "dsdname", "dddname"];
-        
+          let check = ["sirename", "ssname", "sdname", "ddname", "sssname", "ssdname", "sdsname", "sddname", "dsname", "dssname", "dsdname", "dddname"];
+
           for (const ancestor of check) {
             let el = $(`.${ancestor}`);
             if (!el.text()) el.remove();
@@ -93,19 +93,19 @@ document.addEventListener("DOMContentLoaded", async () => {
           let slots = await charadex.initialize.page(
             listData.profileArray[0].slots,
             charadex.page.masterlist.relatedData['slots'],
-            () => {},
+            () => { },
             (data) => {
               // add background images to characters
-              $('.cd-slot-container').each(function(i) {
-                  const element = $(this);
-                  const status = data.array[i]?.status;
-                  if (status === 'Used') {
-                    element.addClass('cd-slot-unavailable');
-                    
-                    const foal = data.array[i]?.foallink;
-                    if (foal) element.find('.cd-slot-status').html(`(<a href="${foal}">Used</a>)`)
-                  }
-                  else if (status === 'Available') element.find('.cd-slot-status').remove();
+              $('.cd-slot-container').each(function (i) {
+                const element = $(this);
+                const status = data.array[i]?.status;
+                if (status === 'Used') {
+                  element.addClass('cd-slot-unavailable');
+
+                  const foal = data.array[i]?.foallink;
+                  if (foal) element.find('.cd-slot-status').html(`(<a href="${foal}">Used</a>)`)
+                }
+                else if (status === 'Available') element.find('.cd-slot-status').remove();
               });
             }
           );
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
   );
-  
+
   charadex.tools.loadPage('.softload', 500);
-  
+
 });

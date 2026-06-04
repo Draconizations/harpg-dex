@@ -19,7 +19,7 @@ charadex.buildList = (selector = 'charadex') => {
     listClass: `${selector}-list`,
     item: `${selector}-gallery-item`,
   }
-  
+
   /* Initialize Gallery
   ===================================================================== */
   const initializeGallery = (galleryArray, additionalListConfigs, gallerySelector) => {
@@ -28,10 +28,10 @@ charadex.buildList = (selector = 'charadex') => {
     if (!charadex.tools.checkArray(galleryArray)) return false;
 
     // Create list classes
-    listConfig.valueNames =  charadex.tools.createListClasses(galleryArray);
+    listConfig.valueNames = charadex.tools.createListClasses(galleryArray);
 
     // Return the list
-    return new List(gallerySelector || `${selector}-gallery`, {...listConfig, ...additionalListConfigs}, galleryArray);
+    return new List(gallerySelector || `${selector}-gallery`, { ...listConfig, ...additionalListConfigs }, galleryArray);
 
   };
 
@@ -51,7 +51,7 @@ charadex.buildList = (selector = 'charadex') => {
 
     // Return the profile in an array if it exists 
     return profile ? [profile] : false;
-  
+
   };
 
   /* Initialize Profile
@@ -62,7 +62,7 @@ charadex.buildList = (selector = 'charadex') => {
     if (!charadex.tools.checkArray(profileArray)) return false;
 
     // Create list classes & update the item name
-    listConfig.valueNames =  charadex.tools.createListClasses(profileArray);
+    listConfig.valueNames = charadex.tools.createListClasses(profileArray);
     listConfig.item = `${selector}-profile`;
 
     // Return the list
@@ -112,18 +112,18 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
 
       // Remove the id and add a special class
       newFilter
-      .removeAttr('id')
-      .addClass(filterClass);
+        .removeAttr('id')
+        .addClass(filterClass);
 
       // Find the label and add the filter name
       newFilter
-      .find('label')
-      .text(filter);
+        .find('label')
+        .text(filter);
 
       // Find the select and add the filter name & options
       let filterDOM = newFilter.find('select')
-      .attr('name', charadex.tools.scrub(filter))
-      .append(charadex.tools.createSelectOptions(parameters[filter]));
+        .attr('name', charadex.tools.scrub(filter))
+        .append(charadex.tools.createSelectOptions(parameters[filter]));
 
       // Add multiselect
       charadex.tools.addMultiselect(filterDOM);
@@ -135,7 +135,7 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
 
     return true;
 
-  } 
+  }
 
   // Create the filters when created;
   createFilters();
@@ -148,7 +148,7 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
     filtersElement.parents(`#${selector}-filter-container`).show();
 
     // Deal with the Dom
-    $(`.${filterClass}`).each(function(el) {
+    $(`.${filterClass}`).each(function (el) {
       $(this).on('change', () => {
 
         // Get the key from the select name attr
@@ -172,7 +172,7 @@ charadex.listFeatures.filters = (parameters, selector = 'charadex') => {
 
       });
     });
-    
+
     // If they're in a container, hide it if there's nothing in it
     listJs.on('updated', (list) => {
       let listClass = $(`.${list.listClass}`);
@@ -306,7 +306,7 @@ charadex.listFeatures.search = (searchParameters, searchFilterToggle = true, sel
   const initializeSearch = (listJs) => {
 
     if (!listJs) return false;
-    
+
     // Else create the search
     createSearch();
 
@@ -367,7 +367,7 @@ charadex.listFeatures.prevNextLink = function (pageUrl, galleryArray, profileArr
 
   // Show the prevnext buttons
   $(`#${selector}-prevnext-container`).show();
-  
+
   return true;
 
 };

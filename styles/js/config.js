@@ -30,9 +30,9 @@ charadex.sheet = {
 
   pages: {
     masterlist: "masterlist",
-    lineage:    "lineage",
-    gallery:    "gallery",
-    slots:      "slots"
+    lineage: "lineage",
+    gallery: "gallery",
+    slots: "slots"
   },
 
   experience: {
@@ -280,13 +280,13 @@ charadex.page.gallery = {
 charadex.page.index = {
 
   designs: {
-    ... charadex.page.masterlist,
+    ...charadex.page.masterlist,
     dexSelector: 'design',
     amount: 4,
   },
 
   gallery: {
-    ... charadex.page.gallery,
+    ...charadex.page.gallery,
     dexSelector: 'artwork',
     amount: 4,
   },
