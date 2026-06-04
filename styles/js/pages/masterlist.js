@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             charadex.page.masterlist.relatedData['gallery']
           );
         } else {
-          $(".gallert-list").text("No gallery items found.")
+          $(".gallery-list").text("No gallery items found.")
         }
       }
 
