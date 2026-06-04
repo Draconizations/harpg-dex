@@ -4,6 +4,27 @@
 import { charadex } from '../charadex.js';
 
 
+function getRankData(xp) {
+
+  const ranks = charadex.sheet.experience.ranks;
+  let current = [0, 'Unranked'];
+  let next = ranks[0];
+
+  for (let i = 0; i < ranks.length; i++ ) {
+    if (xp >= ranks[i][0]) {
+      current = ranks[i];
+
+      // check if we're not at the final rank
+      if (i !== ranks.length - 1)
+        next = ranks[i + 1];
+      else next = ranks[i]; // else set to the same rank
+    }
+  }
+
+  return { current, next }
+}
+
+
 /* ==================================================================== */
 /* Load
 ======================================================================= */
@@ -16,6 +37,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     async (listData) => {
 
       if (listData.type == 'profile') {
+
+        // if we aren't tracking experience, get rid of this entire thing
+        if (!charadex.sheet.experience.toggle) {
+          $('.cd-experience-container').remove();
+        } else {
+          // create the XP progress bar
+          const experience = $('.experience').text();
+
+          const { current, next } = getRankData(experience);
+          console.log(next)
+
+          // display progress from current rank to the next
+          if (current[0] !== next[0]) {
+            $('.xp-progress-bar').css('width', ((experience - current[0]) / (next[0] - current[0])  * 100) + '%');
+            $('.cd-next-rank').text(`Next rank: ${next[1]}`);
+          } else {
+            $('.xp-progress-bar').css('width', '100%');
+            $('.xp-progress-bar').removeClass(('bg-secondary'));
+            $('.cd-next-rank').remove();
+          }
+
+          // change some text displays
+          $('.experience').text(`${experience}/${next[0]}`)
+          $('.cd-rank').text(current[1]);
+        }
 
         // Create the lineage tab
         if (charadex.tools.checkArray(listData.profileArray[0].lineage)) {

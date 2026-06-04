@@ -35,6 +35,23 @@ charadex.sheet = {
     slots:      "slots"
   },
 
+  experience: {
+    toggle: true, // set this to "false" if you don't want to track experience!
+    ranks: [ // you're free to change the ranks here
+      [25, 'Quality Merit'],
+      [75, 'Refined Merit'],
+      [150, 'Superior Merit'],
+      [250, 'Exemplary Merit'],
+      [400, 'Noble Merit'],
+      [425, 'Quality Pretige'],
+      [475, 'Refined Prestige'],
+      [550, 'Superior Prestige'],
+      [650, 'Exemplary Prestige'],
+      [800, 'Noble Prestige'],
+      [1000, 'Hall Of Fame']
+    ]
+  },
+
   options: {
     designTypes: ['Import', 'Lineaged'],
     statuses: ['Resell', 'Trade', 'Gift', 'For Sale', 'Purchased', 'Adopted', 'Designed'],
