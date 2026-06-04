@@ -15,8 +15,8 @@ let charadex = {};
 /* Any preview links will still show Charadex's information
 /* ==================================================================== */
 charadex.site = {
-  title: "hARPG Tracker",
-  url: "https://charadex-team.github.io/charadex-v1.0/",
+  title: "hARPG Dex",
+  url: "https://draconizations.github.io/harpg-dex/",
   description: `A horse ARPG character tracker.`
 }
 
