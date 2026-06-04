@@ -252,11 +252,11 @@ charadex.page.gallery = {
       relatedProperty: 'id',
       dexSelector: 'designs',
       profileProperty: 'design',
-      profileToggle: false,
+      profileToggle: true,
       sitePage: 'masterlist',
 
       sort: {
-        toggle: true,
+        toggle: false,
         key: "timestamp",
         order: "desc",
         parameters: []
