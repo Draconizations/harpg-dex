@@ -151,6 +151,86 @@ charadex.page.masterlist = {
 
 };
 
+
+/* Gallery
+/* --------------------------------------------------------------- */
+charadex.page.gallery = {
+
+  sheetPage: charadex.sheet.pages.gallery,
+  sitePage: 'gallery',
+  dexSelector: 'charadex',
+  profileProperty: 'id',
+
+  sort: {
+    toggle: true,
+    key: "timestamp",
+    order: "desc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 12,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Design Type': charadex.sheet.options.designTypes,
+      'Status': charadex.sheet.options.statuses,
+      'gender': charadex.sheet.options.genders,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Title', 'Artist']
+  },
+
+  prevNext: {
+    toggle: true,
+    text: 'title',
+  },
+
+  relatedData: {
+
+    [charadex.sheet.pages.masterlist]: {
+
+      sheetPage: charadex.sheet.pages.masterlist,
+      primaryProperty: 'horse',
+      relatedProperty: 'id',
+      dexSelector: 'designs',
+      profileProperty: 'id',
+      profileToggle: true,
+
+      sort: {
+        toggle: true,
+        key: "timestamp",
+        order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: true,
+        amount: 6,
+      },
+    },
+
+  }
+
+};
+
+
+
 /* Index
 /* --------------------------------------------------------------- */
 charadex.page.index = {
@@ -163,11 +243,10 @@ charadex.page.index = {
 
   gallery: {
     ... charadex.page.gallery,
-    dexSelector: 'gallery',
+    dexSelector: 'artwork',
     amount: 4,
   },
 
 };
-
 
 export { charadex };

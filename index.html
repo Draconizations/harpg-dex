@@ -132,20 +132,12 @@
       <div class="row no-gutters design-list softload m-n2"></div>
     </div>
 
-    <!-- Prompts
+    <!-- Gallery
     <!-- --------------------------------------------------------------- -->
-    <div class="card p-md-5 p-4 mb-3" id="prompt-gallery">
-      <h4 class="mb-0"><a href="prompts.html">Prompts</a></h4>
+    <div class="card p-md-5 p-4 mb-3" id="artwork-gallery">
+      <h4 class="mb-0"><a href="gallery.html">Gallery</a></h4>
       <hr>
-      <div class="row no-gutters prompt-list softload m-n2"></div>
-    </div>
-
-    <!-- Staff
-    <!-- --------------------------------------------------------------- -->
-    <div class="card p-md-5 p-4 mb-3" id="staff-gallery">
-      <h4 class="mb-0"><a href="staff.html">Staff</a></h4>
-      <hr>
-      <div class="row no-gutters staff-list softload m-n2"></div>
+      <div class="row no-gutters artwork-list softload m-n2"></div>
     </div>
 
     
@@ -168,49 +160,52 @@
 
     <!-- Designs
     <!-- --------------------------------------------------------------- -->
-    <div class="col-md-3 col-sm-6 p-2" id="design-gallery-item">
+    <div class="col-md-6 p-2" id="design-gallery-item">
       <div class="card bg-faded h-100">
-        <div class="card-header bg-faded text-center">
+        <!-- Header -->
+        <div class="card-header text-center">
           <h5 class="mb-0">
-            <a class="profileid profilelink" href=""></a>
+            <a class="callname profilelink" href=""></a>
           </h5>
+          <span class="text-muted"><span class="showname"></</span>
         </div>
+
+        <!-- Image-->
         <div class="card-body cd-gallery-card d-flex flex-fill">
           <img class="image img-fluid m-auto" src="" >
         </div>
-        <div class="card-footer bg-faded text-center">
-          <a class="owner ownerlink small" href=""></a>
+
+        <!-- Height + Gender -->
+        <div class="card-footer text-center">
+          <span class="small">
+            <span class="height"></span> <span class="gender"></span>
+          </span>
         </div>
       </div>
     </div>
 
-    <!-- Prompts
+    <!-- Gallery
     <!-- --------------------------------------------------------------- -->
-    <div class="col-md-4 col-sm-6 p-2" id="prompt-gallery-item">
-      <div class="card bg-faded">
-        <h6 class="card-header bg-faded text-truncate">
-          <a class="profileid profilelink"></a>
-        </h6>
-        <div class="cd-prompt-background"></div>
-        <div class="card-body small description"></div>
-      </div>
-    </div>
+    <div class="col-md-6 p-2" id="artwork-gallery-item">
+      <div class="card bg-faded h-100">
+       <!-- Header -->
+        <div class="card-header text-center">
+          <h5 class="mb-0">
+            <a class="title profilelink" href=""></a>
+          </h5>
+          <span class="text-muted"><span class="artist"></</span>
+        </div>
 
-    <!-- Staff
-    <!-- --------------------------------------------------------------- -->
-    <div class="col-md-4 col-sm-6 p-2" id="staff-gallery-item">
-      <div class="card bg-faded p-3 h-100">
-        <div class="row no-gutters m-n2">
-          <div class="col-md-5 p-2">
-            <img class="image img-thumbnail img-fluid m-auto" src="">
-          </div>
-          <div class="col-md-7 p-2">
-            <div class="text-truncate">
-              <a class="profileid profilelink"></a>
-            </div>
-            <hr class="my-2">
-            <span class="small jobtitle"></span>
-          </div>
+        <!-- Image-->
+        <div class="card-body cd-gallery-card d-flex flex-fill">
+          <img class="image img-fluid m-auto" src="" >
+        </div>
+
+        <!-- Height + Gender -->
+        <div class="card-footer text-center">
+          <span class="small">
+            <span class="timestamp"></span>
+          </span>
         </div>
       </div>
     </div>
