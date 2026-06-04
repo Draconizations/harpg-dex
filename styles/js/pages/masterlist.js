@@ -40,7 +40,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             charadex.page.masterlist.relatedData['gallery']
           );
         } else {
-          $(".gallery-list").text("No gallery items found.")
+          $(".gallery-list").html("<div class='text-center w-100'>No gallery items found.</div>")
+        }
+
+        if (charadex.tools.checkArray(listData.profileArray[0].slots)) {
+          let slots = await charadex.initialize.page(
+            listData.profileArray[0].slots,
+            charadex.page.masterlist.relatedData['slots'],
+            () => {},
+            (data) => {
+              // add background images to characters
+              $('.cd-slot-container').each(function(i) {
+                  const element = $(this);
+                  const status = data.array[i]?.status;
+                  if (status === 'Used') {
+                    element.addClass('cd-slot-unavailable');
+                    
+                    const foal = data.array[i]?.foallink;
+                    if (foal) element.find('.cd-slot-status').html(`(<a href="${foal}">Used</a>)`)
+                  }
+                  else if (status === 'Available') element.find('.cd-slot-status').remove();
+              });
+            }
+          );
+        } else {
+          $(".slots-list").html("<div class='text-center w-100'>No slots found.</div>")
         }
       }
 

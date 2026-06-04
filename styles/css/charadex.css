@@ -832,3 +832,7 @@ p:last-child {
 .cd-design-container:last-child .cd-design-background {
   border-bottom-right-radius: calc(var(--cd-border-radius) - 1px) !important;
 }
+
+.cd-slot-unavailable {
+  opacity: 0.5;
+}

@@ -32,6 +32,7 @@ charadex.sheet = {
     masterlist: "masterlist",
     lineage:    "lineage",
     gallery:    "gallery",
+    slots:      "slots"
   },
 
   options: {
@@ -39,6 +40,7 @@ charadex.sheet = {
     statuses: ['Resell', 'Trade', 'Gift', 'For Sale', 'Purchased', 'Adopted', 'Designed'],
     genders: ["Stallion", "Mare", "Gelding", "Mare (infertile)"],
     breeds: ["Loshenka"],
+    slotStatutes: ['Available', 'Pending', 'Used', 'Relinquished'],
   }
 }
 
@@ -138,6 +140,29 @@ charadex.page.masterlist = {
         toggle: true,
         key: "timestamp",
         order: "desc",
+        parameters: []
+      },
+
+      pagination: {
+        toggle: true,
+        bottomToggle: true,
+        amount: 6,
+      },
+    },
+
+    [charadex.sheet.pages.slots]: {
+
+      sheetPage: charadex.sheet.pages.slots,
+      primaryProperty: 'id',
+      relatedProperty: 'horse',
+      dexSelector: 'slots',
+      profileProperty: 'design',
+      profileToggle: false,
+
+      sort: {
+        toggle: true,
+        key: "timestamp",
+        order: "asc",
         parameters: []
       },
 
