@@ -474,6 +474,10 @@ a:active {
   border-radius: 0 0  calc(var(--cd-border-radius) - 1px) calc(var(--cd-border-radius) - 1px) !important;
 }
 
+.list-group-item {
+  background-color: var(--cd-card-background-color) !important;
+}
+
 .list-group-item:first-child {
   border-top-left-radius: calc(var(--cd-border-radius) - 1px) calc(var(--cd-border-radius) - 1px) !important;
   border-top-right-radius: calc(var(--cd-border-radius) - 1px) calc(var(--cd-border-radius) - 1px) !important;

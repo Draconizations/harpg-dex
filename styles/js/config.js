@@ -184,7 +184,7 @@ charadex.page.masterlist = {
       },
 
       pagination: {
-        toggle: true,
+        toggle: false,
         bottomToggle: true,
         amount: 6,
       },

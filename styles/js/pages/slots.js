@@ -16,6 +16,11 @@ function updateEntries(data) {
     }
     else if (status === 'Available') element.find('.cd-slot-status').remove();
   });
+
+  $('.cd-owner-container').each(function (i) {
+    const el = $(this);
+    if (!el.find('.owner').text()) el.remove();
+  });
 }
 
 /* ==================================================================== */
