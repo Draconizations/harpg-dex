@@ -171,7 +171,7 @@ charadex.page.masterlist = {
 
       sheetPage: charadex.sheet.pages.slots,
       primaryProperty: 'id',
-      relatedProperty: 'horse',
+      relatedProperty: 'id',
       dexSelector: 'slots',
       profileProperty: 'design',
       profileToggle: false,
