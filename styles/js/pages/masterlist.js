@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             charadex.page.masterlist.relatedData['lineage']
           );
 
-          let check = ["sirename", "ssname", "sdname", "ddname", "sssname", "ssdname", "sdsname", "sddname", "dsname", "dssname", "dsdname", "dddname"];
+          let check = ["sirename", "damname", "ssname", "sdname", "ddname", "sssname", "ssdname", "sdsname", "sddname", "dsname", "dssname", "dsdname", "dddname"];
 
           for (const ancestor of check) {
             let el = $(`.${ancestor}`);
