@@ -26,7 +26,7 @@ charadex.site = {
 /* ==================================================================== */
 charadex.sheet = {
 
-  id: "1JUZJObJgZY2L2ih3Yd94c-R81HckluLsxYX3sqFmves",
+  id: "1O44LBbOudteR7Ir9o4OPNiXzCDB1VO9hx8dAiKcmj9Y",
 
   pages: {
     masterlist: "masterlist",
@@ -171,7 +171,7 @@ charadex.page.masterlist = {
 
       sheetPage: charadex.sheet.pages.slots,
       primaryProperty: 'id',
-      relatedProperty: 'id',
+      relatedProperty: 'horse',
       dexSelector: 'slots',
       profileProperty: 'design',
       profileToggle: false,
@@ -191,6 +191,53 @@ charadex.page.masterlist = {
     },
 
   }
+
+};
+
+/* Slots
+/* --------------------------------------------------------------- */
+charadex.page.slots = {
+
+  sheetPage: charadex.sheet.pages.slots,
+  sitePage: 'slots',
+  dexSelector: 'charadex',
+
+  sort: {
+    toggle: true,
+    key: "timestamp",
+    order: "desc",
+    parameters: []
+  },
+
+  pagination: {
+    toggle: true,
+    bottomToggle: true,
+    amount: 10,
+  },
+
+  filters: {
+    toggle: true,
+    parameters: {
+      'Status': charadex.sheet.options.slotStatutes,
+    }
+  },
+
+  fauxFolder: {
+    toggle: false,
+    folderProperty: '',
+    parameters: [],
+  },
+
+  search: {
+    toggle: true,
+    filterToggle: true,
+    parameters: ['All', 'Timestamp', 'Horse Name', 'Owner']
+  },
+
+  prevNext: {
+    toggle: false,
+    text: '',
+  },
 
 };
 
@@ -219,11 +266,7 @@ charadex.page.gallery = {
 
   filters: {
     toggle: false,
-    parameters: {
-      'Design Type': charadex.sheet.options.designTypes,
-      'Status': charadex.sheet.options.statuses,
-      'gender': charadex.sheet.options.genders,
-    }
+    parameters: {}
   },
 
   fauxFolder: {
